@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzically: Teams</title>
+    <link rel="stylesheet" href="{%static 'play.css' %}" />
+  </head>
+  <body>
+    <h1 class="title">Quizzically</h1>
+    <h2>{{ question }}</h2>
+    {% for i in choices %} {% if i == answer %}
+    <button class="choice tc">{{ i }}<br /></button>
+    {% else %}
+    <button class="choice tw">{{ i }}<br /></button>
+    {% endif %} {% endfor %}<br /><br /><br />
+    {% if 'team1' in lead %}<a href="/teams/{{ 1V }}/{{ team2 }}/{{ team3 }}/{{ team4 }}"
+      ><button class="teambtn lead">Team 1<br />{{ team1 }} Points</button></a
+    >{% else %}<a href="/teams/{{ 1V }}/{{ team2 }}/{{ team3 }}/{{ team4 }}"
+      ><button class="teambtn">Team 1<br />{{ team1 }} Points</button></a
+    >{% endif %} {% if 'team2' in lead %}<a href="/teams/{{ team1 }}/{{ 2V }}/{{ team3 }}/{{ team4 }}"
+      ><button class="teambtn lead">Team 2<br />{{ team2 }} Points</button></a
+    >{% else %}<a href="/teams/{{ team1 }}/{{ 2V }}/{{ team3 }}/{{ team4 }}"
+      ><button class="teambtn">Team 2<br />{{ team2 }} Points</button></a
+    >{% endif %} {% if 'team3' in lead %}
+    <a href="/teams/{{ team1 }}/{{ team2 }}/{{ 3V }}/{{ team4 }}"
+      ><button class="teambtn lead">Team 3<br />{{ team3 }} Points</button></a
+    >{% else %}<a href="/teams/{{ team1 }}/{{ team2 }}/{{ 3V }}/{{ team4 }}"
+      ><button class="teambtn">Team 3<br />{{ team3 }} Points</button></a
+    >{% endif %} {% if 'team4' in lead %}
+    <a href="/teams/{{ team1 }}/{{ team2 }}/{{ team3 }}/{{ 4V }}"
+      ><button class="teambtn lead">Team 4<br />{{ team4 }} Points</button></a
+    >{% else %}
+    <a href="/teams/{{ team1 }}/{{ team2 }}/{{ team3 }}/{{ 4V }}"
+      ><button class="teambtn">Team 4<br />{{ team4 }} Points</button></a
+    >{% endif %}<br /><br /><br />
+    <a href="/teams/{{ team1 }}/{{ team2 }}/{{ team3 }}/{{ team4 }}"
+      ><button class="skip">Skip</button></a
+    >
+    <br /><br />
+    <a href="/teams/0/0/0/0"><button class="skip">Restart</button></a>
+    <br /><br /><a href="/"><button class="skip">Quit</button></a>
+  </body>
+</html>

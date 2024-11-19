@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzically</title>
+    <link rel="stylesheet" href="{%static 'home.css' %}" />
+    <style>
+      .question:hover span {
+        display: none;
+      }
+      .question:hover::before {
+        content: " {{ answer }}";
+        color: green;
+        font-size: 15pt;
+        font-style: italic;
+        font-style: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Quizzically</h1>
+    <br /><br /><br /><br />
+    <p>
+      A trivia game for solo or team play.<br />Play on your own to earn a streak of questions answered,
+      or compete with others locally for the most questions answered correctly.
+    </p>
+    <a href="/freeplay/0/start"><button class="playbtn">Freeplay</button></a>&ensp;&ensp;&ensp;
+    <a href="/teams/0/0/0/0"><button class="playbtn">Teams</button></a
+    ><br /><br /><br /><br /><br /><br />
+    <button class="question"><span>{{ question }}</span></button>
+    <p>Includes {{ qCount }} questions.</p>
+  </body>
+</html>

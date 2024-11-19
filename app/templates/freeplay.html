@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzically: Freeplay</title>
+    <link rel="stylesheet" href="{%static 'play.css' %}" />
+  </head>
+  <body>
+    <h1 class="title">Quizzically</h1>
+    <h2>{{ question }}</h2>
+    {% for i in choices %} {% if i == answer %}
+    <a href="/freeplay/{{ goodJob }}/correct"><button class="choice">{{ i }}</button></a>
+    {% else %}
+    <a href="/freeplay/0/wrong"><button class="choice">{{ i }}</button></a>
+    {% endif %} {% endfor %} {% if status == 'correct' %}
+    <h3 class="result correct">CORRECT</h3>
+    {% endif %} {% if status == 'wrong' %}
+    <h3 class="result wrong">WRONG</h3>
+    {% endif %}
+    <div class="bottom">
+      <h3>Streak: {{ points }}</h3>
+      <a href="/freeplay/0/start"><button class="skip">Restart</button></a>
+      <br /><br /><a href="/"><button class="skip">Quit</button></a>
+    </div>
+  </body>
+</html>
