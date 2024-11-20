@@ -1,7 +1,7 @@
 body {
   text-align: center;
   padding: 7em;
-  background-color: rgb(54, 54, 244);
+  background-image: linear-gradient(to top, rgb(0, 0, 142), rgb(54, 54, 244));
 }
 .title {
   position: absolute;
