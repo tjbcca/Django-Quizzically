@@ -6,7 +6,7 @@
   # **Django Trivia**
    
   ## **DESCRIPTION**
-  This Schedule Planner allows you to input a starting date and then add days to the page with boxes for you to fill in with information. The + and - buttons add and remove date boxes respectively. At the top of the screen is a section for the title of your schedule. Once the schedule is complete the site can be zoomed in and out of to adjust the size and then screenshot to save it.
+  Quizzically provides users with a trivia service that includes questions and allows to play in Solo/Freeplay mode or Team mode.
 
 |                                      COLOR PALETTE                                      |                                       DEMO                                       |
 | :-------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
@@ -16,8 +16,8 @@
 
 ## **KEY FEATURES:**
 
-Allows the addition of text boxes with each date added to the schedule. You can set a starting date and add or remove boxes from there.
+Has 2 modes, Freeplay and Teams. Users have access to the preset questions to play trivia.
 
 ## **HOW TO USE (Visual Studio Code)**
 
-Run the react app and use the buttons to add or remove dates. Reload the page to restart.
+Run the server and go to the website. Click buttons to choose answers or assign team points.
