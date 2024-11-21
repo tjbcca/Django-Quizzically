@@ -10,6 +10,7 @@
   <body>
     <h1 class="title">Quizzically</h1>
     <h2>{{ question }}</h2>
+    <h6>Category: {{ category }}</h6>
     {% for i in choices %} {% if i == answer %}
     <a href="/freeplay/{{ goodJob }}/correct"><button class="choice">{{ i }}</button></a>
     {% else %}
